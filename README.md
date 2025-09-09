@@ -34,4 +34,4 @@ dashboard_thingspeak/
    ```bash
    python app.py
    ```
-2. Acesse o dashboard pelo navegador em `http://localhost:5000`
+2. Acesse o dashboard pelo navegador em `http://127.0.0.1:5000`
