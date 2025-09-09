@@ -1,7 +1,6 @@
 # Dashboard ThingSpeak
-![Uploading FireShot Capture 034 - Dashboard IoT - ThingSpeak - [127.0.0.1].png…]()
-
 Este projeto é um dashboard simples para explorar a API do ThingSpeak utilizando Python e Flask.
+<img width="1366" height="1271" alt="FireShot Capture 034 - Dashboard IoT - ThingSpeak -  127 0 0 1" src="https://github.com/user-attachments/assets/6304c24b-7854-40d0-a714-184da604e4f4" />
 
 ## Funcionalidades
 - Visualização de dados do ThingSpeak
