@@ -36,10 +36,3 @@ dashboard_thingspeak/
    python app.py
    ```
 2. Acesse o dashboard pelo navegador em `http://localhost:5000`
-
-## Personalização
-- Edite o arquivo `templates/index.html` para modificar a interface.
-- Adapte o `app.py` para consumir diferentes endpoints da API do ThingSpeak.
-
-## Licença
-Este projeto está sob a licença MIT.
