@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard IoT - ThingSpeak</title>
+  <style>
+    /* Estilo base */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 30px 0;
+      text-align: center;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease;
+    }
+
+    /* Cards de métricas */
+    .metrics-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px 30px;
+      border-radius: 16px;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .metric strong {
+      font-size: 1.5rem;
+      color: #4ade80;
+    }
+
+    /* Gráficos */
+    .graph-container {
+      width: 90%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease;
+    }
+
+    .plotly-graph-div {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* Animações */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      .metric { font-size: 1rem; padding: 15px 20px; }
+      .metric strong { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌡️ Dashboard IoT - Umidade e Temperatura</h1>
+
+  <div class="metrics-container">
+    <div class="metric">Temperatura Atual: <strong>{{ last_temp }} °C</strong></div>
+    <div class="metric">Umidade Atual: <strong>{{ last_umidade }} %</strong></div>
+  </div>
+
+  <div class="graph-container">
+    {{ temp_plot | safe }}
+  </div>
+
+  <div class="graph-container">
+    {{ umidade_plot | safe }}
+  </div>
+</body>
+</html>
